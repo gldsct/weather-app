@@ -66,3 +66,12 @@ async function getData (location, date, day) {
             }
     }
 }
+
+const inputLocation = document.querySelector("#location");
+const submitButton = document.querySelector(".location-input-submit");
+
+submitButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    getData(inputLocation.value, "current");
+    inputLocation.value = "";
+});
