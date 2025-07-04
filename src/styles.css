@@ -99,4 +99,58 @@ main {
     background-position: bottom center;
 }
 
+/* Main Weather Content Styles */
+
+.main-weather-content {
+    height: 70%;
+    padding: 32px 24px;
+}
+
+.weather-location {
+    display: flex;
+    align-items: end;
+    gap: 6px;
+    font-size: 1.2rem;
+}
+
+.location-time {
+    margin-left: 32px;
+}
+
+.location-main-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: center;
+}
+
+.location-temperature {
+    font-size: 5rem;
+}
+
+.location-status-image {
+    width: 50px;
+    height: auto;
+}
+
+.location-misc-stats {
+    display: flex;
+    gap: 32px;
+}
+
+.location-misc-stats > * {
+    padding: 0 12px;
+    border-radius: 12px;
+    background-color: rgba(171, 182, 201, 0.7);
+    color: white;
+}
+
+/* Misc Weather Content Styles */
+
+.misc-weather-content {
+    height: 30%;
+    background-color: white;
+    border-radius: 48px;
+}
+
 /* End of Main Section Styles */
