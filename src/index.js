@@ -205,7 +205,7 @@ function showWeather (currentFeatures, hourlyFeatures) {
             miscHeader.classList.add("misc-weather-content-header");
             miscHeader.textContent = "Weather Today";
             miscContent.appendChild(miscHeader);
-        };
+        }
 
         function showMiscContainer () {
             miscContainer.classList.add("misc-weather-content-container");
@@ -214,7 +214,7 @@ function showWeather (currentFeatures, hourlyFeatures) {
             showDetails(allHourlyFeatures, startIndex);
 
             miscContent.appendChild(miscContainer);
-        };
+        }
 
         function showDetails (allHourlyFeatures, start) {
             miscContainer.textContent = "";
@@ -244,10 +244,42 @@ function showWeather (currentFeatures, hourlyFeatures) {
     
                 miscContainer.appendChild(subcontainer);
             }
-        };
+        }
+
+        function showButtons () {
+            const prevButton = document.createElement("button");
+            const nextButton = document.createElement("button");
+            prevButton.classList.add("misc-weather-prev");
+            prevButton.textContent = "❮";
+            nextButton.classList.add("misc-weather-next");
+            nextButton.textContent = "❯";
+            miscContent.appendChild(prevButton);
+            miscContent.appendChild(nextButton);
+    
+            prevButton.addEventListener("click", () => {
+                if ((startIndex - 1) < 0) {
+                    startIndex = 0;
+                }
+                else {
+                    startIndex = startIndex - 1;
+                }
+                showDetails(allHourlyFeatures, startIndex);
+            });        
+            
+            nextButton.addEventListener("click", () => {
+                if ((startIndex + 3) >= 23) {
+                    startIndex = 20;
+                }
+                else {
+                    startIndex = startIndex + 1;
+                }
+                showDetails(allHourlyFeatures, startIndex);
+            });
+        }
 
         showMiscHeader();
         showMiscContainer();
+        showButtons();
     }
 
     showMainContent();
