@@ -97,6 +97,7 @@ main {
 
     background-size: cover;
     background-position: bottom center;
+    position: relative;
 }
 
 /* Main Weather Content Styles */
@@ -129,8 +130,13 @@ main {
 }
 
 .location-status-image {
-    width: 50px;
+    width: 75px;
     height: auto;
+}
+
+.location-main-stats-summary {
+    display: inline-block;
+    margin-bottom: 12px;
 }
 
 .location-misc-stats {
@@ -138,7 +144,7 @@ main {
     gap: 32px;
 }
 
-.location-misc-stats > * {
+.location-main-stats-summary, .location-misc-stats > * {
     padding: 0 12px;
     border-radius: 12px;
     background-color: rgba(171, 182, 201, 0.7);
@@ -151,6 +157,45 @@ main {
     height: 30%;
     background-color: white;
     border-radius: 48px;
+    padding: 12px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.misc-weather-content-header {
+    font-weight: bold;
+}
+
+.misc-weather-content-container {
+    margin-top: 12px;
+    flex: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.misc-hourly-status-icon {
+    height: 75px;
+    width: 75px;
+    background-color: rgba(171, 182, 201, 0.1);
+    padding: 12px;
+    border-radius: 16px;
+}
+
+.misc-weather-content-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.misc-hourly-temp {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.misc-hourly-time {
+    font-size: 0.9rem;
 }
 
 /* End of Main Section Styles */
