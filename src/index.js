@@ -93,11 +93,16 @@ const miscContent = document.querySelector(".misc-weather-content");
 
 submitButton.addEventListener("click", (event) => {
     event.preventDefault();
-    getData(inputLocation.value, "today").then((resolve) => {
-        console.log(resolve.current, resolve.hourly);
-        showWeather(resolve.current, resolve.hourly);
-    });
-    inputLocation.value = "";
+    if (inputLocation.checkValidity()) {
+        getData(inputLocation.value, "today").then((resolve) => {
+            console.log(resolve.current, resolve.hourly);
+            showWeather(resolve.current, resolve.hourly);
+        });
+        inputLocation.value = "";
+    }
+    else {
+        alert("Please enter a location before submitting!");
+    }
 });
 
 function showWeather (currentFeatures, hourlyFeatures) {
